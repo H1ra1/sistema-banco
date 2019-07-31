@@ -1,12 +1,34 @@
-<form action="" method="POST">
-    {% csrf_token %}
-    <input type="text" name="nome" placeholder="nome">
-    <input type="text" name="sobrenome" placeholder="nome">
-    <input type="text" name="nascimento" placeholder="nome">
-    <input type="text" name="cpf" placeholder="nome">
-    <input type="text" name="email" placeholder="nome">
-    <input type="text" name="senha" placeholder="nome">
-    <input type="text" name="telefone" placeholder="nome">
-    <input type="text" name="genero" placeholder="nome">
-    <button type="submit">Cadastrar</button>
-</form>
+{% extends 'base.html' %}
+{% block title %}Cadastrar{% endblock %}
+
+{% block content %}
+<div class="center">
+    <div class="cadastro">
+        <div class="msg">{{msg}}</div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label>Nome: </label>
+            <input type="text" name="nome" placeholder="Nome">
+            <label>Sobrenome: </label>
+            <input type="text" name="sobrenome" placeholder="Sobrenome">
+            <label>Data de nascimento: </label>
+            <input type="date" name="nascimento">
+            <label>CPF: </label>
+            <input type="text" name="cpf" placeholder="CPF">
+            <label>E-mail: </label>
+            <input type="text" name="email" placeholder="E-mail">
+            <label>Senha: </label>
+            <input type="password" name="senha" placeholder="Senha">
+            <label>Telefone: </label>
+            <input type="text" name="telefone" placeholder="Telefone">
+            <label>Gênero: </label>
+            <select name="genero"> 
+                <option value="M">Masculino</option>
+                <option value="F">Feminino</option>
+                <option value="O">Outros</option>
+            </select>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
