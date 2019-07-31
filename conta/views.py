@@ -26,7 +26,7 @@ def cadastrar(request):
             conta.titular = titular
             conta.numero_conta = gerar_numero()
             conta.save()
-            return render(request, 'cadastrar.html', {'msg': 'ok'})
+            return render(request, 'cadastrar.html', {'msg': 'Cadastro efetuado!'})
         except:
             print('error')
             return render(request, 'cadastrar.html', {'msg': 'Error'})
