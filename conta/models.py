@@ -53,7 +53,7 @@ class Titular(models.Model):
     )
 
     def __str__(self):
-        return f'[{self.pk}]{self.nome}'
+        return f'{self.nome} {self.sobrenome}'
 
 
 class Conta(models.Model):
@@ -89,4 +89,4 @@ class Conta(models.Model):
     )
 
     def __str__(self):
-        return self.numero_conta
+        return f'{self.numero_conta}'
